@@ -15,12 +15,12 @@ services:
     restart: unless-stopped
     develop:
       watch:
-        - action: sync
+        - action: sync+restart
           path: ./backend
           target: /app/backend
         - action: rebuild
           path: ./pyproject.toml
-    command: [ "uv", "run", "uvicorn", "--workers", "1", "backend.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload" ]
+    command: [ "uv", "run", "uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000" ]
 
   db:
     image: postgres:17
