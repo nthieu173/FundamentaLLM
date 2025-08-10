@@ -454,6 +454,7 @@ dependencies = [
     { name = "openai" },
     { name = "pydantic" },
     { name = "pydantic-ai" },
+    { name = "python-multipart" },
     { name = "sqlmodel" },
 ]
 
@@ -465,6 +466,7 @@ requires-dist = [
     { name = "openai", specifier = ">=1.99.6" },
     { name = "pydantic", specifier = ">=2.11.7" },
     { name = "pydantic-ai", specifier = ">=0.6.2" },
+    { name = "python-multipart", specifier = ">=0.0.20" },
     { name = "sqlmodel", specifier = ">=0.0.24" },
 ]
 

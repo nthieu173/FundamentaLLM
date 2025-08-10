@@ -10,6 +10,6 @@ DATABASE_URL: str = f"postgresql+asyncpg://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{
 engine = create_async_engine(DATABASE_URL, echo=False)
 
 
-async def db_session():
+async def get_db_session():
     async with AsyncSession(engine) as session:
         yield session

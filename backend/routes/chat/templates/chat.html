@@ -1,38 +1,26 @@
 {% extends "base.html" %}
 {% block title %}Chat · {{ title }}{% endblock %}
 {% block content %}
-  <header>
-    <nav>
-      <ul>
-        <li><strong>{{ title }}</strong></li>
-      </ul>
-      <ul>
-        <li><a href="/">New Chat</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <nav>
+    <ul>
+      <li><strong>{{ title }}</strong></li>
+    </ul>
+    <ul>
+      <li><a href="/">New Chat</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <section id="messages" aria-live="polite" aria-busy="false"></section>
+<section id="messages" aria-live="polite" aria-busy="false"></section>
 
-  <article class="chat-input">
-    <form
-      id="chat-form"
-      hx-post="/chat/{{ conversation_id }}"
-      hx-target="#messages"
-      hx-swap="beforeend"
-      hx-indicator="#typing-indicator"
-    >
-      <label>
-        Your message
-        <textarea name="text" rows="3" placeholder="Type a message..." required></textarea>
-      </label>
-      <div role="status" id="typing-indicator" class="muted" style="display:none">
-        <span class="spinner"></span>
-        Thinking…
-      </div>
-      <button type="submit">Send</button>
-    </form>
-  </article>
+<article class="chat-input">
+  <form id="chat-form" hx-post="/chat/{{ conversation_id }}" hx-target="#messages" hx-swap="beforeend">
+    <label>
+      Your message
+      <textarea name="text" rows="3" placeholder="Type a message..." required></textarea>
+    </label>
+    <button type="submit">Send</button>
+  </form>
+</article>
 {% endblock %}
-
-
