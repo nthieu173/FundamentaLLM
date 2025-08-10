@@ -1,0 +1,8 @@
+{% macro render_message(role, text) -%}
+  <article class="message {{ role }}">
+    <header class="muted" style="margin-bottom: 0.25rem; text-transform: capitalize;">{{ role }}</header>
+    <div>{{ text | e }}</div>
+  </article>
+{%- endmacro %}
+
+
