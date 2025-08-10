@@ -18,5 +18,9 @@ def get_chat_agent(model: OpenAIModel = Depends(get_model)) -> Agent:
 def get_title_agent(model: OpenAIModel = Depends(get_model)) -> Agent:
     return Agent(
         model,
-        system_prompt="The following is the first message of a conversation. Generate a title for the conversation.",
+        system_prompt=(
+            "The following is the first message of a conversation. "
+            "Reply with only a title for the conversation that is succinct and descriptive, "
+            "capturing the topic of the conversation. "
+        ),
     )

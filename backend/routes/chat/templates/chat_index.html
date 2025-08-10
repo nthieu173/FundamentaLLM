@@ -5,7 +5,7 @@
 <header>
   <nav>
     <ul>
-      <li><strong>{{ title }}</strong></li>
+      <li></li>
     </ul>
     <ul>
       <li><button hx-get="/chat/">New Chat</button></li>
@@ -20,7 +20,7 @@
 </section>
 
 <article class="chat-input">
-  <form id="chat-form" hx-post="/chat/{{ conversation_id }}" hx-target="#messages" hx-swap="beforeend">
+  <form id="chat-form" hx-post="/chat/">
     <label>
       Your message
       <textarea name="text" placeholder="Type a message..." required></textarea>
